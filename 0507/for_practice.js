@@ -26,15 +26,15 @@ for (let i = 0; i < numbers.length; i++) {
 
 console.log("---------for in---------");
 
-const person = {
-  name : "mojae",
-  age : 26
-}
+// const person = {
+//   name : "mojae",
+//   age : 26
+// }
 
-for (let key in person) {
-  console.log(key);
-  console.log(person[key]);
-}
+// for (let key in person) {
+//   console.log(key);
+//   console.log(person[key]);
+// }
 
 
 
