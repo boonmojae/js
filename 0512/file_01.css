@@ -1,0 +1,28 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.page {
+  width: 90%;
+  height: 20%;
+  background: linear-gradient(to bottom, rgb(201, 255, 162), rgb(255, 255, 255));
+  /* 그라데이션 배경 */
+  text-align: center;
+}
+
+.btnClick {
+  color: gray;
+  font-size: 13px;
+}
+
+button {
+  border: none;
+}
+
+button:hover {
+  border: none;
+  border-radius: 2px;
+  color: white;
+  background-color: rgb(243, 174, 46);
+}

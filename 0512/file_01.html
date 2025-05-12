@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹 페이지 실습</title>
+</head>
+<link rel="stylesheet" href="file_01.css">
+
+<body>
+  <div class="page">
+    <h1>나의 첫 웹 페이지</h1>
+    <p class=btnClick>이름을 입력하세요</p>
+    
+    <form onsubmit="changeMes(event)">
+      <input type="text" class="username" placeholder="이름">
+      <button type="submit">인사하기</button>
+    </form>
+
+  </div>
+  <script>
+    function changeMes(event) {
+      event.preventDefault();
+
+      const username = document.querySelector(".username");
+      const name = username.value.trim();
+
+      const p = document.querySelector(".btnClick");
+      console.log(name);//브라우저 콘솔에서 확인
+      if (name) {
+        p.textContent = `안녕하세요. ${name}님`;
+      } else {
+        p.textContent = `이름을 입력해주세요`;
+      }
+
+    }
+  </script>
+</body>
+
+</html>
+
+
+<!-- 
+onclick 기능을 넣지 않았을때는 이것만 사용 가능
+const btn = document.querySelector("button");
+      const p = document.querySelector(".btnClick");
+      btn.addEventListener('click', function () {
+        p.textContent = "버튼이 클릭되었습니다!"
+      }); -->

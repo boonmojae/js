@@ -1,0 +1,47 @@
+h2 {
+  text-align: center;
+}
+
+.formBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff692;
+  flex-direction: column;
+}
+
+form {
+  background-color: #ffffff;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+label {
+  font-weight: 700;
+  margin: 17px 0 11px 0;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 197, 104);
+  height: 30px;
+}
+
+input, select {
+  border: solid rgb(185, 185, 185);
+  border-radius: 5px;
+  height: 30px;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  margin-right: 10px;
+}
