@@ -1,0 +1,24 @@
+.header_list {
+    display: flex;
+    font-size: 17px;
+    background-color: rgb(255, 242, 0);
+    justify-content: space-between;
+    height: 55px;
+    align-items: center;
+}
+.library_name {
+    font-size: 22px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+.header_main_list {
+    display: flex;
+    gap: 28px;
+    font-weight: 500;
+}
+.header_search_toggle {
+    display:flex;
+    gap: 8px;
+    font-weight: 500;
+    margin-right: 20px;
+}
