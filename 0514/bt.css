@@ -1,0 +1,53 @@
+.header {
+  display: flex;
+}
+.content_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}
+
+.section_wrapper {
+  width: 960px;
+  max-width: 100%;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
+
+.btn_group {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.btn_group button {
+  flex: 1;
+  min-width: 0;
+  height: 80px;
+}
+
+@media (max-width: 768px) {
+  .btn_group {
+    flex-direction: column;
+  }
+
+  .btn_group button {
+    width: 100%;
+  }
+}
+
+.user_list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.input-wide {
+  width: 100%;
+  max-width: 1000px;
+}
