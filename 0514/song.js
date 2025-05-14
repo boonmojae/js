@@ -26,7 +26,7 @@ function newList() {
     const li = document.createElement("li");
     li.textContent = song;
     ul.appendChild(li);
-    console.log(li);
+    // console.log(li);
   });
 }
 
