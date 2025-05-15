@@ -1,7 +1,13 @@
-
+/*스크롤바 추가로 왼쪽 밀림*/
 html {
   overflow-y: scroll;
 }
+
+/*모달 팝업 - 왼쪽 밀림*/
+body.modal-open {
+  padding-right: 0 !important;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -9,7 +15,7 @@ html {
 }
 
 .songList {
-  margin:0 330px;
+  margin:0 350px;
   font-size: 17px;
   font-weight: 700;
 }
@@ -38,4 +44,20 @@ li {
   color: white;
   font-weight: 500;
   border-radius: 7px;
+}
+.plusBtn {
+  background-color: rgb(26, 147, 253);
+  width: 100px;
+  height: 30px;
+  font-size: 13px;
+  text-align: center;
+  /* margin: 10px 0; */
+  padding-top: 4px;
+  color: white;
+  font-weight: 500;
+  border-radius: 7px;
+  margin-left: auto;
+}
+.newListTitle {
+  margin-bottom: 11px;
 }
