@@ -12,97 +12,109 @@ function newList() {
     "HOT",
   ];
 
-  const ul = document.querySelector(".list_1");
+  const ol = document.querySelector(".new-list-group");
 
-  if (ul.style.display === "none" || ul.style.display === "") {
-    ul.style.display = "block";
+
+  if (ol.style.display === "none" || ol.style.display === "") {
+    ol.style.display = "block";
   } else {
-    ul.style.display = "none";
+    ol.style.display = "none";
   }
 
-  ul.innerHTML = "";
-  
-  songList.forEach((song) => {
+  ol.innerHTML = "";
+
+  // foreach -----------------------------------------
+  songList.forEach((song, index) => {
     const li = document.createElement("li");
-    li.textContent = song;
-    ul.appendChild(li);
-    // console.log(li);
-  });
+    li.textContent = `${index + 1}. ${song}`;
+    li.classList.add("list-group-item");
+    ol.appendChild(li);
+  })
+
+
+  // for -----------------------------------------
+  // for (let i = 0; i < songList.length; i++) {
+  //   const li = document.createElement('li');
+  //   li.textContent = `${i + 1} ${songList[i]}`;
+  //   li.classList.add("list-group-item");
+  //   ol.appendChild(li);
+  // }
+
+
+  // map -----------------------------------------
+  // songList.map((song, index) => {
+  //   const li = document.createElement("li");
+  //   li.textContent = `${index + 1}. ${song}`;
+  //   li.classList.add("list-group-item");
+  //   ol.appendChild(li);
+  // })
+
 }
-
-
-
 
 function songDetails() {
-
   const songDetails = {
-  "너에게 닿기를": { artist: "10CM", likes: 58471 },
-  "like JENNIE": { artist: "제니", likes: 76168 },
-  Drowning: { artist: "WOODZ", likes: 189248 },
-  "모르시나요(PROD.로코베리)": { artist: "조째즈", likes: 70040 },
-  "TOO BAD": { artist: "G-DRAGON", likes: 146178 },
-  "HOME SWEET HOME": { artist: "G-DRAGON", likes: 211539 },
-  "나는 반딧불": { artist: "황가람", likes: 141198 },
-  Whiplash: { artist: "aespa", likes: 132606 },
-  "REBEL HEART": { artist: "IVE (아이브)", likes: 98429 },
-  HOT: { artist: "LE SSERAFIM (르세라핌)", likes: 35001 },
-};
+    "너에게 닿기를": { artist: "10CM", likes: 58471 },
+    "like JENNIE": { artist: "제니", likes: 76168 },
+    Drowning: { artist: "WOODZ", likes: 189248 },
+    "모르시나요(PROD.로코베리)": { artist: "조째즈", likes: 70040 },
+    "TOO BAD": { artist: "G-DRAGON", likes: 146178 },
+    "HOME SWEET HOME": { artist: "G-DRAGON", likes: 211539 },
+    "나는 반딧불": { artist: "황가람", likes: 141198 },
+    Whiplash: { artist: "aespa", likes: 132606 },
+    "REBEL HEART": { artist: "IVE (아이브)", likes: 98429 },
+    HOT: { artist: "LE SSERAFIM (르세라핌)", likes: 35001 },
+  };
 
-const ul = document.querySelector(".list_2");
+  const ol = document.querySelector(".song-info-list");
+  ol.innerHTML = "";
 
-if (ul.style.display === "none" || ul.style.display === "") {
-  ul.style.display = "block";
-} else {
-  ul.style.display = "none";
+  const btn = document.createElement("div");
+  btn.textContent = "정렬";
+  btn.classList.add("bbtn");
+  ol.appendChild(btn);
+
+  let isFiltered = false;
+
+
+  const render = (entries) => {
+    const existingLis = ol.querySelectorAll("li");
+    existingLis.forEach(li => li.remove());
+
+    entries.forEach(([title, info]) => {
+      const li = document.createElement("li");
+      li.textContent = `${title} - ${info.artist} ${info.likes.toLocaleString()}likes`
+      li.classList.add("list-group-item");
+      ol.appendChild(li);
+    });
+  };
+
+  render(Object.entries(songDetails));
+
+  btn.addEventListener('click', () => {
+    if (!isFiltered) {
+      const filter = Object.entries(songDetails)
+      .filter(([, info]) => info.likes >= 60000)
+      .sort((a,b) => b[1].likes - a[1].likes);
+
+      render(filter);
+      btn.textContent = "전체";
+    } else {
+      render(Object.entries(songDetails));
+      btn.textContent = "정렬";
+    }
+
+    isFiltered = !isFiltered;
+  });
+
+
+
+
+  if (ol.style.display === "none" || ol.style.display === "") {
+    ol.style.display = "block";
+  } else {
+    ol.style.display = "none";
+  }
+
+
 }
 
-ul.innerHTML = "";
-
-songDetails.forEach((song) => {
-  const li = document.createElement("li");
-  li.textContent(song);
-  ul.appendChild(li);
-  console.log(li);
-});
-
-}
-
-
-// function songDetails() {
-//   const songDetails = {
-//     "너에게 닿기를": { artist: "10CM", likes: 58471 },
-//     "like JENNIE": { artist: "제니", likes: 76168 },
-//     Drowning: { artist: "WOODZ", likes: 189248 },
-//     "모르시나요(PROD.로코베리)": { artist: "조째즈", likes: 70040 },
-//     "TOO BAD": { artist: "G-DRAGON", likes: 146178 },
-//     "HOME SWEET HOME": { artist: "G-DRAGON", likes: 211539 },
-//     "나는 반딧불": { artist: "황가람", likes: 141198 },
-//     Whiplash: { artist: "aespa", likes: 132606 },
-//     "REBEL HEART": { artist: "IVE (아이브)", likes: 98429 },
-//     HOT: { artist: "LE SSERAFIM (르세라핌)", likes: 35001 },
-//   };
-
-//   const ul = document.querySelector(".list_2");
-
-//   // 토글로 보이기/숨기기
-//   if (ul.style.display === "none" || ul.style.display === "") {
-//     ul.style.display = "block";
-//   } else {
-//     ul.style.display = "none";
-//   }
-
-//   // 기존 내용 비우기
-//   ul.innerHTML = "";
-
-//   // 객체를 순회하여 노래 정보 추가
-//   Object.keys(songDetails).forEach((songName) => {
-//     const li = document.createElement("li");
-
-//     // 노래 이름과 아티스트/좋아요 수 출력
-//     const songInfo = songDetails[songName];
-//     li.textContent = `${songName} - 아티스트: ${songInfo.artist}, 좋아요 수: ${songInfo.likes}`;
-
-//     // 리스트에 추가
-//     ul.appendChild(li);
-//   });
-// }

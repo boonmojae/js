@@ -18,7 +18,8 @@ function addUser() {
   updateUser();
   updateStatus();
 }
-// html 그리는 역할할
+
+// html 그리는 역할
 function updateUserList() {
   userList.innerHTML = "";
   users.forEach((user, index) => {
