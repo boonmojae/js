@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>song_list</title>
-  <link rel="stylesheet" href="song.css">
-  </link>
+  <link rel="stylesheet" href="song.css"></link>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="song.js" defer></script>
@@ -15,7 +14,7 @@
   <div class="container">
     <h2 class="title">노래 리스트 생성 - 반복문 실습</h2>
     <div class="songList">
-      <div class="plusBtn" data-bs-toggle="modal" data-bs-target="#userModal">노래 추가하기</div>
+      <div class="plusBtn" data-bs-toggle="modal" data-bs-target="#songModal">노래 추가하기</div>
       <div class="newList">
         <div class="newListTitle" onclick="newList()">💥 최신 노래 리스트</div>
         <ol class="list-group new-list-group"></ol>
@@ -28,7 +27,7 @@
   </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="songModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -38,16 +37,16 @@
         <div class="modal-body">
           <form id="userForm">
             <div class="mb-3">
-              <label for="song" class="form-label">곡</label>
-              <input type="text" class="form-control" id="song" required>
+              <label for="song" class="form-label"></label>
+              <input type="text" class="form-control" id="song" placeholder="노래 제목" required><!--for랑 id랑 맞춰야됨-->
             </div>
             <div class="mb-3">
-              <label for="singer" class="form-label">가수</label>
-              <input type="text" class="form-control" id="singer" required>
+              <label for="singer" class="form-label"></label>
+              <input type="text" class="form-control" id="singer" placeholder="가수" required>
             </div>
             <div class="mb-3">
-              <label for="likeCount" class="form-label">좋아요</label>
-              <input type="text" class="form-control" id="likeCount" required>
+              <label for="likeCount" class="form-label"></label>
+              <input type="number" class="form-control" id="likeCount" placeholder="좋아요" required>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-primary w-100" id="plusBtn">추가 하기</button><!-- onclick="plusBtn()"-->

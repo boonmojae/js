@@ -29,7 +29,32 @@ function newList() {
     li.textContent = `${index + 1}. ${song}`;
     li.classList.add("list-group-item");
     ol.appendChild(li);
+    console.log(`${index + 1}. ${song}`);
   })
+
+
+
+  // while ------------------------------------
+  // let index = 0;
+  // while (index < songList.length) {
+  //   const li = document.createElement("li");
+  //   li.textContent = `${index + 1}. ${songList[index]}`;
+  //   li.classList.add("list-group-item");
+  //   ol.appendChild(li);
+  //   index++;
+  // }
+
+
+  // for of -----------index가 필요 없을때 사용(필요하면 증감식 추가)
+  // let index = 0;
+  // for (const song of songList) {
+  //   const li = document.createElement("li");
+  //   li.textContent = `${index + 1}. ${song}`;
+  //   li.classList.add("list-group-item");
+  //   ol.appendChild(li);
+  //   console.log(`${index + 1}. ${song}`);
+  //   index++;
+  // }
 
 
   // for -----------------------------------------
@@ -65,63 +90,70 @@ const songDetails = {
   HOT: { artist: "LE SSERAFIM (르세라핌)", likes: 35001 },
 };
 
-function songInfo() {
 
+function songInfo() {
   const ol = document.querySelector(".song-info-list");
   ol.innerHTML = "";
+
+  let isFiltered = false;
 
   const btn = document.createElement("div");
   btn.textContent = "정렬";
   btn.classList.add("bbtn");
   ol.appendChild(btn);
 
-  let isFiltered = false;
+  function renderSongs() {
+    ol.innerHTML = "";
+    ol.appendChild(btn);
 
-  const render = (entries) => {
-    const existingLis = ol.querySelectorAll("li");
-    existingLis.forEach(li => li.remove());
+    for (let song in songDetails) {
+      const { artist, likes } = songDetails[song];
 
-    entries.forEach(([title, info], index) => {
-      const li = document.createElement("li");
-      li.textContent = `${index + 1}. ${title} - ${info.artist} ${info.likes.toLocaleString()}likes`
-      li.classList.add("list-group-item");
-      ol.appendChild(li);
-    });
-  };
+      if (!isFiltered || likes >= 60000) {
+        const li = document.createElement("li");
+        li.innerHTML = `${song}, ${artist}, ${likes}`;
+        li.classList.add("list-group-item");
+        ol.appendChild(li);
+      }
+    }
+    // forIn();
+  }
 
-  render(Object.entries(songDetails));
+
+  //조건문이 있어서 함수로 사용할 수가 없다
+  // function forIn() {
+  // for (let song in songDetails) {
+  //     const { artist, likes } = songDetails[song];
+
+  //     if (!isFiltered || likes >= 60000) {
+  //       const li = document.createElement("li");
+  //       li.innerHTML = `${song}, ${artist}, ${likes}`;
+  //       li.classList.add("list-group-item");
+  //       ol.appendChild(li);
+  //     }
+  //   }
+  //   }
+
 
   btn.addEventListener('click', () => {
-    if (!isFiltered) {
-      const filter = Object.entries(songDetails)
-        .filter(([, info]) => info.likes >= 60000)
-        .sort((a, b) => b[1].likes - a[1].likes);
-
-      render(filter);
-      btn.textContent = "전체";
-    } else {
-      render(Object.entries(songDetails));
-      btn.textContent = "정렬";
-    }
-
     isFiltered = !isFiltered;
+    btn.textContent = isFiltered ? "전체" : "정렬";
+    renderSongs();
   });
+
+  renderSongs();
 
   if (ol.style.display === "none" || ol.style.display === "") {
     ol.style.display = "block";
   } else {
     ol.style.display = "none";
   }
-
 }
 
-//onclick="plusBtn()" 함수 찾을수 없음 에러
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("plusBtn").addEventListener("click", plusBtn);
-});
+
+document.getElementById("plusBtn").addEventListener('click', plusBtn);
 
 function plusBtn() {
-
   const songInput = document.getElementById("song");
   const singerInput = document.getElementById("singer");
   const likeCountInput = document.getElementById("likeCount");
@@ -140,18 +172,20 @@ function plusBtn() {
     likes: likeCount
   };
 
-  console.log(`${song} - ${singer} (${likeCount.toLocaleString()}likes)`);
+  const ol = document.querySelector(".song-info-list");
+  ol.innerHtml = "";
 
-  //추가하면 리스트 밖에 먼저 생김 => songInfo()
-  // const ol = document.querySelector(".song-info-list");
-  // const li = document.createElement("li");
-  // li.textContent = `${song} - ${singer} (${likeCount.toLocaleString()}likes)`;
-  // li.classList.add("list-group-item");
-  // ol.appendChild(li);
+  // forIn()
+  for (let song in songDetails) {
+    const { artist, likes } = songDetails[song];
+    const li = document.createElement("li");
+    li.innerHTML = `${song}, ${artist}, ${likes}`;
+    li.classList.add("list-group-item");
+    ol.appendChild(li);
+  }
 
   songInput.value = "";
   singerInput.value = "";
   likeCountInput.value = "";
-
-  songInfo();
 }
+
