@@ -4,27 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>practice</title>
+    <title>Library</title>
+    <link rel="stylesheet" href="practice.css">
+    <script src="practice.js" defer></script>
 </head>
-<link rel="stylesheet" href="practice.css">
+
 <body>
     <header>
         <div class="header_list">
-            <div class="library_name">솔방울 도서관</div>
+            <div class="library_name">도서관</div>
             <div class="header_main_list">
-            <div>도서 목록</div>
-            <div>희망 도서 신청</div>
-            <div>커뮤니티</div>
-            <div>나만의 도서관</div>
+                <div class="bookList">도서 목록</div>
+                <div class="bookRequest">희망 도서 신청</div>
+                <div class="community">커뮤니티</div>
+                <div class="myLibrary">나만의 도서관</div>
             </div>
             <div class="header_search_toggle">
-            <div>자료 검색</div><!--돋보기 이미지-->
-            <div>로그인</div><!--로그인/로그아웃-->
-            <div>목록</div><!--목록 이미지-->
+                <div class="search">자료 검색</div><!--돋보기 이미지-->
+                <div class="logIn">로그인</div><!--로그인/로그아웃-->
+                <div class="headerList">목록</div><!--목록 이미지-->
             </div>
         </div>
     </header>
-    <main></main>
+    <main>
+        <div class="mainCon">
+            <div class="newBook">신책 도서</div>
+            <div class="newBk">
+                <!--슬라이드 버튼-->
+                <button class="slidBtn">&lt;</button>
+
+                <!--신책 도서 리스트-->
+                <div class="newBkList">
+                    <div class="imageSize">
+                        <img src="https://image.yes24.com/goods/125829847/XL">
+                    </div>
+                    <div class="title">토마토 컵라면</div>
+                </div>
+                <div class="newBkList">
+                    <div class="imageSize">
+                        <img src="https://image.yes24.com/goods/144044191/XL">
+                    </div>
+                    <div class="title">크림의 무게를 재는 방법</div>
+                </div>
+                <div class="newBkList">
+                    <div class="imageSize">
+                        <img src="https://image.yes24.com/goods/146270731/XL">
+                    </div>
+                    <div class="title">내 꿈에 가끔만 놀러와</div>
+                </div>
+                <div class="newBkList">
+                    <div class="imageSize">
+                        <img src="https://image.yes24.com/goods/111704883/XL">
+                    </div>
+                    <div class="title">트로피컬 나이트</div>
+                </div>
+
+                <div class="newBkList">
+                    <div class="imageSize">
+                    <img src="https://image.yes24.com/goods/121790294/XL">
+                </div>
+                    <div class="title">뭇볕의 영원으로</div>
+                </div>
+
+                <!--슬라이드 버튼-->
+                <button class="slidBtn">&gt;</button>
+
+
+            </div>
+            <div class="popularBk">
+                <div class="popularBkList">안녕하시오1</div>
+                <div class="popularBkList">안녕하시오2</div>
+                <div class="popularBkList">안녕하시오3</div>
+                <div class="popularBkList">안녕하시오4</div>
+            </div>
+            <div class="recomendBk">
+                <div class="recomendBkList">야광 알이 빛나고 있다1</div>
+                <div class="recomendBkList">야광 알이 빛나고 있다2</div>
+                <div class="recomendBkList">야광 알이 빛나고 있다3</div>
+                <div class="recomendBkList">야광 알이 빛나고 있다4</div>
+            </div>
+        </div>
+    </main>
     <footer></footer>
 </body>
 
