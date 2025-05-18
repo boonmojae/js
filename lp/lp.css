@@ -1,0 +1,49 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.headerTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.headerMain {
+    display: flex;
+    gap: 70px;
+    font-size: 14px;
+}
+.headerSearch {
+    display: flex;
+    gap: 25px;
+    font-size: 14px;
+    margin-right: 20px;
+}
+.search {
+    display: flex;
+}
+.searchInput {
+    border: none;
+    background-color: aqua;
+    width: 110px;
+    margin: 2.5px 3px 0 0;
+    /* rgb(109, 255, 172); */
+}
+.searchBtn {
+    border: none;
+    background-color: white;
+}
+.line {
+    height: 1px;
+    background-color: black;
+    margin-top: 8px;
+}
+a {
+    color: inherit;/*부모 폰트 컬러 참조*/
+    text-decoration: none;
+}
+.genreBox {
+    background-color: aqua;
+    font-weight: 500;
+}
