@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="movie.css">
+  <link rel="stylesheet" href="search.css">
+  <script src="search.js"></script>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script> -->
+  <title>Search</title>
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <div class="headerTitle"><a href="movieMain.html">Movie Finder</a></div>
+      <div class="headerMain">
+        <div class="search"><a href="search.html">Search</a></div>
+        <div class="movie"><a href="movie.html">Movie</a></div>
+        <div class="about"><a href="about.html">About</a></div>
+      </div>
+      <div class="my">
+        <a href="about.html"><img src="./image/dog.jpg" class="myPhoto"></a>
+      </div>
+    </div>
+    <div class="line"></div>
+  </header>
+
+
+  <main>
+    <div class="container">
+      <div class="flexBoxSearch">
+        <div class="searchBox">
+          <input type="text" placeholder="Enter the movie title to search!" class="textBox" id="textBox">
+          <button class="searchBtn"><div class="searchTyp">Search</div></button>
+        </div>
+
+        <div class="movieList">
+          <ul class="searchList">
+            <!--검색한 영화 목록 li-->
+          </ul>
+        </div>
+      </div>
+
+      <div class="flexBoxMovie">
+        <div class="searchMovie">
+          <div class="movieList">
+            <!--js-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+</body>
+
+</html>
