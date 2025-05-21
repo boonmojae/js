@@ -9,6 +9,7 @@
     <script src="about.js" defer></script>
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <title>About</title>
@@ -49,12 +50,16 @@
     <main>
         <div class="mouse">⭐ Move your mouse around! ⭐</div>
         <div class="about-container">
-            <img src="https://ukcicblog.co.kr/wp-content/uploads/2024/10/capybara-977101_1280-optimized.jpg" class="about-img">
+            <img src="https://ukcicblog.co.kr/wp-content/uploads/2024/10/capybara-977101_1280-optimized.jpg"
+                class="about-img">
             <div class="name">Park Min Jae</div>
-            <a href="https://github.com/boonmojae/js" target="_blank">github</a>
+            <a href="https://github.com/boonmojae/js/tree/main/movie_project2" target="_blank" class="gitLink">Github</a>
+
+            <!-- 차트 캔버스 -->
+             <canvas id="pie-chart" class="custom-pie-chart"></canvas>
+             
 
         </div>
-
         <script>
             gsap.to(".mouse", { y: 100, duration: 1, ease: "bounce" });
         </script>

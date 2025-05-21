@@ -47,6 +47,8 @@
     <main>
 
         <div class="custom-movie-detail">
+            <!-- 백그라운드 이미지 박스 추가 -->
+            <div class="background-poster"></div>
             <div class="posterBox">
                 <img class="poster" alt="포스터" src="https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg">
             </div>
@@ -64,52 +66,45 @@
                         world. But when the brothers are separated, Mario embarks on an epic quest to find Luigi.</p>
                 </div>
 
-
                 <div class="chart">
                     <canvas id="polar-chart" width="250" height="250"></canvas>
                 </div>
-
-
-
-
-
             </div>
         </div>
 
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <!--차트-->
     <script>
-    window.onload = () => {
-        new Chart(document.getElementById("polar-chart"), {
-            type: 'polarArea',
-            data: {
-                labels: ["Super Mario"],
-                datasets: [
-                    {
-                        label: "Rating",
-                        backgroundColor: ["rgb(163, 255, 149)"],
-                        data: [7.6] 
-                    }
-                ]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'vote average'
+        window.onload = () => {
+            new Chart(document.getElementById("polar-chart"), {
+                type: 'polarArea',
+                data: {
+                    labels: ["Super Mario"],
+                    datasets: [
+                        {
+                            label: "Rating",
+                            backgroundColor: ["rgb(163, 255, 149)"],
+                            data: [7.6]
+                        }
+                    ]
                 },
-                scale: {
-                    ticks: {
-                        beginAtZero: true,
-                        max: 10
+                options: {
+                    title: {
+                        display: true,
+                        text: 'vote average'
+                    },
+                    scale: {
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10
+                        }
                     }
                 }
-            }
-        });
-    };
-</script>
-
-
+            });
+        };
+    </script>
 </body>
 
 </html>

@@ -7,11 +7,35 @@ html {
   justify-content: center;
   gap: 60px;
   margin-top: 15vh;
+  color: white;
 }
 
-.postBox {
-
+.background-poster-id {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(30%) blur(8px);
+    z-index: -1;
 }
+
+
+.background-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(30%) blur(8px);
+    z-index: -1;
+}
+
 
 .infoBox {
   width: 20%;
@@ -21,6 +45,9 @@ html {
 }
 .chart {
   width: 350px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding-bottom: 8px;
 }
 .title {
   font-size: 50px;

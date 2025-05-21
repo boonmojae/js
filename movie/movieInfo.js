@@ -3484,6 +3484,7 @@ window.onload = () => {
         const movie = movieList.results.find(m => m.id === movieId);
 
         if (movie) {
+            document.querySelector(".background-poster-id").style.backgroundImage = `url('https://image.tmdb.org/t/p/w500${movie.poster_path}')`;
             document.querySelector(".title").textContent = movie.title;
             document.querySelector(".release-date").textContent = `개봉일: ${movie.release_date}`;
             document.querySelector(".overview").textContent = movie.overview;

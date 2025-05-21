@@ -61,3 +61,18 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+.gitLink {
+  margin: 10px 0;
+  font-weight: 600;
+  margin-bottom: 3vh;
+}
+.gitLink:hover {
+  margin: 10px 0;
+  font-weight: 600;
+  color: #ffc107;
+  margin-bottom: 3vh;
+}
+.custom-pie-chart {
+  width: 300px !important;
+  height: 300px !important;
+}
