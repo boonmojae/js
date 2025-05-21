@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="movie.js" defer></script>
     <link rel="stylesheet" href="movie.css">
+    <link rel="stylesheet" href="movieInfo.css">
     <link rel="stylesheet" href="main.css">
     <title>Movie</title>
 </head>
@@ -43,7 +44,72 @@
         </nav>
     </header>
     <div style="height: 1px; background-color: black;"></div>
-    <main></main>
+    <main>
+
+        <div class="custom-movie-detail">
+            <div class="posterBox">
+                <img class="poster" alt="포스터" src="https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg">
+            </div>
+            <div class="infoBox">
+                <div>
+                    <h1 class="title">The Super Mario Bros. Movie</h1>
+                    <p class="release-date">개봉일: 2023-04-05</p>
+                    <span class="genre-badge">Family</span>
+                    <span class="genre-badge">Comedy</span>
+                    <span class="genre-badge">Adventure</span>
+                    <span class="genre-badge">Animation</span>
+
+                    <p class="overview">While working underground to fix a water main, Brooklyn plumbers—and
+                        brothers—Mario and Luigi are transported down a mysterious pipe and wander into a magical new
+                        world. But when the brothers are separated, Mario embarks on an epic quest to find Luigi.</p>
+                </div>
+
+
+                <div class="chart">
+                    <canvas id="polar-chart" width="250" height="250"></canvas>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script>
+    window.onload = () => {
+        new Chart(document.getElementById("polar-chart"), {
+            type: 'polarArea',
+            data: {
+                labels: ["Super Mario"],
+                datasets: [
+                    {
+                        label: "Rating",
+                        backgroundColor: ["rgb(163, 255, 149)"],
+                        data: [7.6] 
+                    }
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'vote average'
+                },
+                scale: {
+                    ticks: {
+                        beginAtZero: true,
+                        max: 10
+                    }
+                }
+            }
+        });
+    };
+</script>
+
+
 </body>
 
 </html>

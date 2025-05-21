@@ -1,0 +1,50 @@
+html {
+    overflow-y: scroll;
+}
+
+.custom-movie-detail {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 15vh;
+}
+
+.postBox {
+
+}
+
+.infoBox {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.chart {
+  width: 350px;
+}
+.title {
+  font-size: 50px;
+  font-weight: 600;
+  margin: 1vh 0 3vh 0;
+}
+
+.overview {
+  margin-top: 2vh;
+} 
+
+.genre-badge {
+    display: inline-block;
+    background-color: rgb(98, 255, 74);
+    color: black;
+    padding: 4px 8px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+
+
+
+
+
+

@@ -1,4 +1,8 @@
 /*Main*/
+html {
+    overflow-y: scroll;
+}
+
 .custom-headerItem1 .nav-link,
 .custom-headerItem2 .nav-link,
 .custom-headerItem3 .nav-link {

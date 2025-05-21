@@ -9,6 +9,8 @@
     <script src="about.js" defer></script>
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <title>About</title>
 </head>
 
@@ -43,7 +45,19 @@
         </nav>
     </header>
     <div style="height: 1px; background-color: black;"></div>
-    <main></main>
+
+    <main>
+        <div class="mouse">⭐ Move your mouse around! ⭐</div>
+        <div class="about-container">
+            <img src="https://ukcicblog.co.kr/wp-content/uploads/2024/10/capybara-977101_1280-optimized.jpg" class="about-img">
+            <div>Park Min Jae</div>
+            <link href="https://github.com/boonmojae/js">
+        </div>
+
+        <script>
+            gsap.to(".mouse", { y: 100, duration: 1, ease: "bounce" });
+        </script>
+    </main>
 </body>
 
 </html>

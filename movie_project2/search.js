@@ -3570,7 +3570,7 @@ function clearMovies() {
 
 document.querySelectorAll('.custom-category-btn-pink-outline').forEach(button => {
   button.addEventListener('click', () => {
-    const genreName = button.dataset.genre;
+    const genreName = button.dataset.genre;//data-genre의 값을 가져옴
     const genreObj = genres.find(g => g.name === genreName);
     if (!genreObj) return;
 
@@ -3587,7 +3587,9 @@ document.querySelectorAll('.custom-category-btn-pink-outline').forEach(button =>
       button.classList.add('custom-category-btn-pink-outline-a');
     }
 
+    //선택 장르 바뀌면 지우고
     clearMovies();
+    //다시 렌더링
     renderMovies();
   });
 });
